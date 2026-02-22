@@ -4,7 +4,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { api } from "@/convex/_generated/api";
 import { fetchQuery } from "convex/nextjs";
 import { Metadata } from "next";
-import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
@@ -41,10 +40,10 @@ export default function BlogPage() {
 }
 
 async function LoadBlogList() {
-  // await connection();
-  "use cache";
-  cacheLife("hours");
-  cacheTag("blog");
+  await connection();
+  // "use cache";
+  // cacheLife("hours");
+  // cacheTag("blog");
 
   const data = await fetchQuery(api.posts.getPosts);
 
