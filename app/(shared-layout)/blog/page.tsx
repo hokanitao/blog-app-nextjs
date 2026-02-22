@@ -10,7 +10,7 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense } from "react";
 
-// export const dynamic = "force-static";
+export const dynamic = "force-static";
 // 'auto' | 'force-dynamic' | 'error' | 'force-static'
 // export const revalidate = 30;
 // false | 0 | number
